@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-12-04T12:45:25.251593" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Python" source="/home/ethan-kenway/Test_Python">
+<suite id="s1-s1" name="WS2 Automation" source="/home/ethan-kenway/Test_Python/WS2_Automation.robot">
+<test id="s1-s1-t1" name="Test Case 4 Verify First Name Negative Case" line="289">
+<kw name="Open Web Browser">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-04T12:45:25.435296" level="INFO">Opening browser 'chrome' to base url 'https://automate-test.stpb-digital.com/register/'.</msg>
+<arg>${url}</arg>
+<arg>${brownser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-04T12:45:25.434954" elapsed="1.564196"/>
+</kw>
+<status status="PASS" start="2025-12-04T12:45:25.434046" elapsed="1.565487"/>
+</kw>
+<kw name="Verify First Name Negative Case">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator_FirstName}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-12-04T12:45:27.001324" elapsed="0.129064"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-04T12:45:27.131082" level="INFO">Clicking element 'xpath=//*[@id="btn-sign-up"]'.</msg>
+<arg>${locator_SignUp_Btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T12:45:27.130724" elapsed="0.120361"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-12-04T12:45:27.277565" level="INFO">${txt_err_fname} = This field is required</msg>
+<var>${txt_err_fname}</var>
+<arg>${locator_msg_error_fname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-04T12:45:27.251374" elapsed="0.026559"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${txt_err_fname}</arg>
+<arg>This field is required</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-12-04T12:45:27.278173" elapsed="0.000319"/>
+</kw>
+<status status="PASS" start="2025-12-04T12:45:27.000506" elapsed="0.278092"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-12-04T12:45:27.278785" elapsed="1.080724"/>
+</kw>
+<status status="PASS" start="2025-12-04T12:45:25.429510" elapsed="2.930596"/>
+</test>
+<status status="PASS" start="2025-12-04T12:45:25.300724" elapsed="3.066097"/>
+</suite>
+<status status="PASS" start="2025-12-04T12:45:25.262848" elapsed="3.109071"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Python" id="s1" pass="1" fail="0" skip="0">Test Python</stat>
+<stat name="WS2 Automation" id="s1-s1" pass="1" fail="0" skip="0">Test Python.WS2 Automation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
