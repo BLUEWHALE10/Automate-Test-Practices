@@ -1,193 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2025-12-17T17:19:59.391170" rpa="false" schemaversion="5">
-<suite id="s1" name="LoginTestCase" source="/home/ethan-kenway/Test_Python/LoginPage/LoginTestCase.robot">
-<test id="s1-t1" name="Verify Button Show Password" line="71">
-<kw name="Verify Show Password" owner="LoginKeword">
-<kw name="Open Login Page" owner="LoginKeword">
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2026-01-01T16:44:16.065550" rpa="false" schemaversion="5">
+<suite id="s1" name="Testcase Search Page" source="/home/ethan-kenway/Automate Test Practices/SearchPage/Testcase_Search_Page.robot">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary" type="SETUP">
+<arg>0.05s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-01-01T16:44:16.195540" elapsed="0.000304"/>
+</kw>
+<test id="s1-t1" name="Test Validation Header And Menubar" line="11">
+<kw name="Open Login Page" owner="LoginKeword" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:19:59.561729" level="INFO">Opening browser 'gc' to base url 'https://automate-test.stpb-digital.com/login/'.</msg>
+<msg time="2026-01-01T16:44:16.197312" level="INFO">Opening browser 'gc' to base url 'https://automate-test.stpb-digital.com/user/list/'.</msg>
 <arg>${url_web}</arg>
 <arg>${browser_web}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-12-17T17:19:59.561450" elapsed="13.739848"/>
+<status status="PASS" start="2026-01-01T16:44:16.197071" elapsed="1.740377"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-12-17T17:20:13.301597" elapsed="0.107517"/>
+<status status="PASS" start="2026-01-01T16:44:17.937885" elapsed="0.064378"/>
 </kw>
 <arg>${url}</arg>
 <doc>ใช้สำหรับเปิดเว็บไซต์</doc>
-<status status="PASS" start="2025-12-17T17:19:59.560800" elapsed="13.848542"/>
+<status status="PASS" start="2026-01-01T16:44:16.196714" elapsed="1.805757"/>
+</kw>
+<kw name="Verify login Pass" owner="LoginKeword">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator_email}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-01T16:44:18.003445" elapsed="0.389745"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator_password}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-17T17:20:13.409580" elapsed="0.029953"/>
+<status status="PASS" start="2026-01-01T16:44:18.393632" elapsed="0.133140"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-01T16:44:18.527645" level="INFO">Typing text 'user.test@krupbeam.com' into text field 'id=email'.</msg>
+<arg>${locator_email}</arg>
+<arg>user.test@krupbeam.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-01T16:44:18.527144" elapsed="0.304358"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:13.440003" level="INFO">Typing password into text field 'name=password'.</msg>
-<msg time="2025-12-17T17:20:13.495399" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2026-01-01T16:44:18.832564" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg time="2026-01-01T16:44:18.982201" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${locator_password}</arg>
-<arg>${password}</arg>
+<arg>jKNsrapwLNV7eBN</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-17T17:20:13.439722" elapsed="0.166898"/>
+<status status="PASS" start="2026-01-01T16:44:18.832004" elapsed="0.313338"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:13.607124" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div/div/div[2]/div/div/form/div[2]/div/div/button'.</msg>
-<arg>${locator_blind_btn}</arg>
+<msg time="2026-01-01T16:44:19.146129" level="INFO">Clicking element 'id=btn-login'.</msg>
+<arg>${locator_btnLogin}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-17T17:20:13.606845" elapsed="0.113738"/>
+<status status="PASS" start="2026-01-01T16:44:19.145698" elapsed="0.225517"/>
 </kw>
-<kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:13.754295" level="INFO">${get_txt} = 1234</msg>
-<var>${get_txt}</var>
-<arg>${locator_password}</arg>
-<doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-17T17:20:13.721520" elapsed="0.032836"/>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Search Filters</arg>
+<arg>60s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-01T16:44:19.371581" elapsed="0.197613"/>
 </kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>${get_txt}</arg>
-<arg>${password}</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-12-17T17:20:13.754574" elapsed="0.000288"/>
+<doc>ใช้สำหรับ login ผ่าน</doc>
+<status status="PASS" start="2026-01-01T16:44:18.002927" elapsed="1.566527"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-12-17T17:20:13.754983" elapsed="0.119020"/>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Search Filters</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-01T16:44:19.569758" elapsed="0.060348"/>
 </kw>
-<arg>1234</arg>
-<doc>ใช้สำหรับตรวจสอบการมองเห็นของ password</doc>
-<status status="PASS" start="2025-12-17T17:19:59.560439" elapsed="14.313818"/>
+<kw name="Verify Header And Menuar" owner="Keyword_Search_Page">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-01T16:44:19.691887" level="INFO">Current page contains element 'xpath=//*[@id="__next"]/div[1]/div[1]/div/div[1]/a/h6'.</msg>
+<arg>${link_icon}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-01T16:44:19.630905" elapsed="0.061176"/>
 </kw>
-<kw name="Verify Show Password" owner="LoginKeword">
-<kw name="Open Login Page" owner="LoginKeword">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:13.878831" level="INFO">Opening browser 'gc' to base url 'https://automate-test.stpb-digital.com/login/'.</msg>
-<arg>${url_web}</arg>
-<arg>${browser_web}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-12-17T17:20:13.878467" elapsed="1.614640"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-01T16:44:19.752838" level="INFO">Current page contains element 'xpath=//*[@id="__next"]/div[1]/div[2]/header/div/div/div[2]/button'.</msg>
+<arg>${locator_Noti}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-01T16:44:19.692559" elapsed="0.060458"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-12-17T17:20:15.493316" elapsed="0.114483"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-01T16:44:19.824983" level="INFO">Current page contains element 'xpath=//*[@id="__next"]/div[1]/div[2]/header/div/div/div[2]/span/div'.</msg>
+<arg>${locator_icon_usr}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-01T16:44:19.753294" elapsed="0.071957"/>
 </kw>
-<arg>${url}</arg>
-<doc>ใช้สำหรับเปิดเว็บไซต์</doc>
-<status status="PASS" start="2025-12-17T17:20:13.876794" elapsed="1.731136"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator_password}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-17T17:20:15.608101" elapsed="0.029725"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:15.638653" level="INFO">Typing password into text field 'name=password'.</msg>
-<msg time="2025-12-17T17:20:15.683620" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${locator_password}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-17T17:20:15.638231" elapsed="0.157647"/>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-01T16:44:19.894794" level="INFO">Current page contains element 'css=#__next &gt; div.layout-wrapper.css-uinsfl &gt; div.MuiDrawer-root.MuiDrawer-docked.layout-vertical-nav.css-1yvzy6r &gt; div &gt; div.MuiBox-root.css-ohwg9z &gt; div &gt; ul &gt; li.MuiListItem-root.MuiListItem-gutters.nav-link.css-6zyuwx &gt; a &gt; div.MuiListItemIcon-root.css-35txlm &gt; svg'.</msg>
+<arg>${locator_menu}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-01T16:44:19.825591" elapsed="0.069446"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:15.796292" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div/div/div[2]/div/div/form/div[2]/div/div/button'.</msg>
-<arg>${locator_blind_btn}</arg>
+<msg time="2026-01-01T16:44:19.895862" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div[1]/div/div[1]/a/h6'.</msg>
+<arg>${link_icon}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-17T17:20:15.796082" elapsed="0.113931"/>
+<status status="PASS" start="2026-01-01T16:44:19.895398" elapsed="0.221409"/>
 </kw>
-<kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:15.930862" level="INFO">${get_txt} = abcd</msg>
-<var>${get_txt}</var>
-<arg>${locator_password}</arg>
-<doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-17T17:20:15.910283" elapsed="0.020625"/>
-</kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>${get_txt}</arg>
-<arg>${password}</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-12-17T17:20:15.931077" elapsed="0.000198"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-12-17T17:20:15.931354" elapsed="0.064402"/>
-</kw>
-<arg>abcd</arg>
-<doc>ใช้สำหรับตรวจสอบการมองเห็นของ password</doc>
-<status status="PASS" start="2025-12-17T17:20:13.875389" elapsed="2.120513"/>
-</kw>
-<kw name="Verify Show Password" owner="LoginKeword">
-<kw name="Open Login Page" owner="LoginKeword">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:15.997209" level="INFO">Opening browser 'gc' to base url 'https://automate-test.stpb-digital.com/login/'.</msg>
-<arg>${url_web}</arg>
-<arg>${browser_web}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-12-17T17:20:15.996988" elapsed="1.586729"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-12-17T17:20:17.584059" elapsed="0.109120"/>
-</kw>
-<arg>${url}</arg>
-<doc>ใช้สำหรับเปิดเว็บไซต์</doc>
-<status status="PASS" start="2025-12-17T17:20:15.996677" elapsed="1.696648"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator_password}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-12-17T17:20:17.693495" elapsed="0.027192"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:17.721150" level="INFO">Typing password into text field 'name=password'.</msg>
-<msg time="2025-12-17T17:20:17.790898" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${locator_password}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-17T17:20:17.720886" elapsed="0.162390"/>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>https://automate-test.stpb-digital.com/user/list/</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-01-01T16:44:20.117181" elapsed="0.119492"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:17.883670" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div/div/div[2]/div/div/form/div[2]/div/div/button'.</msg>
-<arg>${locator_blind_btn}</arg>
+<msg time="2026-01-01T16:44:20.237533" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div[2]/header/div/div/div[2]/button'.</msg>
+<arg>${locator_Noti}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-17T17:20:17.883459" elapsed="0.100161"/>
+<status status="PASS" start="2026-01-01T16:44:20.237039" elapsed="0.236175"/>
 </kw>
-<kw name="Get Value" owner="SeleniumLibrary">
-<msg time="2025-12-17T17:20:18.001906" level="INFO">${get_txt} = efgh</msg>
-<var>${get_txt}</var>
-<arg>${locator_password}</arg>
-<doc>Returns the value attribute of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-12-17T17:20:17.983825" elapsed="0.018242"/>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Notifications</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-01T16:44:20.473622" elapsed="0.074073"/>
 </kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>${get_txt}</arg>
-<arg>${password}</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-12-17T17:20:18.002280" elapsed="0.000275"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-01T16:44:20.548382" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[3]/ul/li[2]/button'.</msg>
+<arg>${locator_read_noti}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-01T16:44:20.548064" elapsed="0.215457"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-01T16:44:20.764398" level="INFO">Clicking element 'css=#__next &gt; div.layout-wrapper.css-uinsfl &gt; div.MuiDrawer-root.MuiDrawer-docked.layout-vertical-nav.css-1yvzy6r &gt; div &gt; div.MuiBox-root.css-ohwg9z &gt; div &gt; ul &gt; li.MuiListItem-root.MuiListItem-gutters.nav-link.css-6zyuwx &gt; a &gt; div.MuiListItemIcon-root.css-35txlm &gt; svg'.</msg>
+<arg>${locator_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-01T16:44:20.763909" elapsed="0.434387"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>https://automate-test.stpb-digital.com/user/list/</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-01-01T16:44:21.198696" elapsed="0.056102"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-01T16:44:21.255695" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div[2]/header/div/div/div[2]/span/div'.</msg>
+<arg>${locator_icon_usr}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-01T16:44:21.255174" elapsed="0.211735"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>User Test</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-01T16:44:21.467254" elapsed="0.062850"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-01T16:44:21.531194" level="INFO">Clicking element 'css=body &gt; div.MuiModal-root.MuiPopover-root.MuiMenu-root.css-hxcdyb &gt; div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiMenu-paper.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1u9pw9f &gt; ul &gt; li'.</msg>
+<arg>${locator_logout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-01T16:44:21.530640" elapsed="0.217835"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>https://automate-test.stpb-digital.com/login/</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-01-01T16:44:21.748784" elapsed="0.054576"/>
+</kw>
+<doc>ใช้สำหรับการตรวจสอบ Header และ Menu bar ว่าปรากฏหรือไม่</doc>
+<status status="PASS" start="2026-01-01T16:44:19.630559" elapsed="2.172937"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-12-17T17:20:18.002663" elapsed="0.063372"/>
+<status status="PASS" start="2026-01-01T16:44:21.803902" elapsed="0.133059"/>
 </kw>
-<arg>efgh</arg>
-<doc>ใช้สำหรับตรวจสอบการมองเห็นของ password</doc>
-<status status="PASS" start="2025-12-17T17:20:15.996256" elapsed="2.069940"/>
-</kw>
-<doc>ใช้สำหรับการตรวจสอบ Button Show Password</doc>
-<tag>ShowPassword</tag>
-<status status="PASS" start="2025-12-17T17:19:59.559407" elapsed="18.507144"/>
+<doc>ทดสอบการทำงานของ Header ของ link ต่างๆใน header และ menu</doc>
+<tag>Header</tag>
+<status status="PASS" start="2026-01-01T16:44:16.195995" elapsed="5.741211"/>
 </test>
-<status status="PASS" start="2025-12-17T17:19:59.392206" elapsed="18.674879"/>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-01-01T16:44:21.938025" elapsed="0.000154"/>
+</kw>
+<status status="PASS" start="2026-01-01T16:44:16.066383" elapsed="5.871833"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">ShowPassword</stat>
+<stat pass="1" fail="0" skip="0">Header</stat>
 </tag>
 <suite>
-<stat name="LoginTestCase" id="s1" pass="1" fail="0" skip="0">LoginTestCase</stat>
+<stat name="Testcase Search Page" id="s1" pass="1" fail="0" skip="0">Testcase Search Page</stat>
 </suite>
 </statistics>
 <errors>
