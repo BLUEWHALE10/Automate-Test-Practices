@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2026-01-02T23:16:28.147320" rpa="false" schemaversion="5">
+<suite id="s1" name="Testcase Search Page" source="/home/ethan-kenway/Automate Test Practices/SearchPage/Testcase_Search_Page.robot">
+<kw name="Set Selenium Speed" owner="SeleniumLibrary" type="SETUP">
+<arg>0.05s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-01-02T23:16:28.315419" elapsed="0.000428"/>
+</kw>
+<test id="s1-t1" name="Test Validation add user" line="38">
+<kw name="Open Login Page" owner="LoginKeword" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:28.317483" level="INFO">Opening browser 'gc' to base url 'https://automate-test.stpb-digital.com/user/list/'.</msg>
+<arg>${url_web}</arg>
+<arg>${browser_web}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-02T23:16:28.317193" elapsed="1.914264"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-02T23:16:30.231701" elapsed="0.064223"/>
+</kw>
+<arg>${url}</arg>
+<doc>ใช้สำหรับเปิดเว็บไซต์</doc>
+<status status="PASS" start="2026-01-02T23:16:28.316752" elapsed="1.979356"/>
+</kw>
+<kw name="Verify Input Data" owner="Keyword_Search_Page">
+<kw name="Fill all data" owner="Keyword_Search_Page">
+<kw name="Verify login Pass" owner="LoginKeword">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator_email}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:30.299192" elapsed="0.454811"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator_password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:30.754484" elapsed="0.132388"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:30.887855" level="INFO">Typing text 'user.test@krupbeam.com' into text field 'id=email'.</msg>
+<arg>${locator_email}</arg>
+<arg>user.test@krupbeam.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:30.887314" elapsed="0.327485"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:31.215675" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg time="2026-01-02T23:16:31.362666" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${locator_password}</arg>
+<arg>jKNsrapwLNV7eBN</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:31.215182" elapsed="0.303348"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:31.519377" level="INFO">Clicking element 'id=btn-login'.</msg>
+<arg>${locator_btnLogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:31.518891" elapsed="0.231602"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Search Filters</arg>
+<arg>60s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:31.750717" elapsed="0.217246"/>
+</kw>
+<doc>ใช้สำหรับ login ผ่าน</doc>
+<status status="PASS" start="2026-01-02T23:16:30.298398" elapsed="1.669777"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator_add_user_btn}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:31.968432" elapsed="0.120648"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:32.089695" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div[2]/main/div/div[2]/div/div[1]/div/a'.</msg>
+<arg>${locator_add_user_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:32.089402" elapsed="0.178272"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>https://automate-test.stpb-digital.com/user/form/</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-01-02T23:16:32.267987" elapsed="0.077635"/>
+</kw>
+<kw name="Verify Default Page" owner="Keyword_Search_Page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${field_add_firstname}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:32.346557" elapsed="0.128818"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${field_add_lastname}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:32.475594" elapsed="0.128308"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${field_add_email}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:32.604312" elapsed="0.122758"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${field_add_mobile}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:32.727498" elapsed="0.127491"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${field_add_hyperlink_rst}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:32.855362" elapsed="0.125579"/>
+</kw>
+<kw name="Page Should Contain Radio Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:33.099399" level="INFO">Current page contains radio button 'validation-basic-radio'.</msg>
+<arg>${field_add_gender}</arg>
+<arg>female</arg>
+<doc>Verifies radio button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:32.981270" elapsed="0.118270"/>
+</kw>
+<kw name="Page Should Contain Radio Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:33.213064" level="INFO">Current page contains radio button 'validation-basic-radio'.</msg>
+<arg>${field_add_gender}</arg>
+<arg>male</arg>
+<doc>Verifies radio button ``locator`` is found from current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:33.099717" elapsed="0.113614"/>
+</kw>
+<kw name="Page Should Contain Checkbox" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:33.404084" level="INFO">Current page contains checkbox 'name=courses.Test Manual'.</msg>
+<arg>${field_add_list_Test_Manual}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:33.213687" elapsed="0.190635"/>
+</kw>
+<kw name="Page Should Contain Checkbox" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:33.588211" level="INFO">Current page contains checkbox 'name=courses.SQL'.</msg>
+<arg>${field_add_list_SQL}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:33.404651" elapsed="0.183827"/>
+</kw>
+<kw name="Page Should Contain Checkbox" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:33.769146" level="INFO">Current page contains checkbox 'name=courses.Automate Test'.</msg>
+<arg>${field_add_list_Auto1}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:33.588831" elapsed="0.180564"/>
+</kw>
+<kw name="Page Should Contain Checkbox" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:33.951983" level="INFO">Current page contains checkbox 'name=courses.Automate Test2'.</msg>
+<arg>${field_add_list_Auto2}</arg>
+<doc>Verifies checkbox ``locator`` is found from the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:33.769724" elapsed="0.182433"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:34.020897" level="INFO">Current page contains element 'id=nationality'.</msg>
+<arg>${field_add_dropdown_nationality}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:33.952440" elapsed="0.068826"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:34.090779" level="INFO">Current page contains element 'id=select-plan'.</msg>
+<arg>${field_add_dropdown_plan}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:34.021611" elapsed="0.069400"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:34.160572" level="INFO">Current page contains element 'id=select-role'.</msg>
+<arg>${field_add_dropdown_role}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:34.091410" elapsed="0.069440"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${field_add_btn_sign-up}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:34.161263" elapsed="0.121060"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:16:32.346178" elapsed="1.936394"/>
+</kw>
+<if>
+<branch type="IF" condition="$dictionary_text_data">
+<for flavor="IN">
+<iter>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:34.288329" level="INFO">Typing text 'Piriya' into text field 'id=firstname'.</msg>
+<arg>${each_data_txt.locator}</arg>
+<arg>${each_data_txt.value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:34.283930" elapsed="0.252031"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_data_txt.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:34.536281" elapsed="0.071979"/>
+</kw>
+<var name="${each_data_txt}">{'locator': 'id=firstname', 'value': 'Piriya', 'err_locator': 'id=error-firstname'}</var>
+<status status="PASS" start="2026-01-02T23:16:34.283666" elapsed="0.324808"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:34.613283" level="INFO">Typing text 'Poonpol' into text field 'id=lastname'.</msg>
+<arg>${each_data_txt.locator}</arg>
+<arg>${each_data_txt.value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:34.609377" elapsed="0.291482"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_data_txt.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:34.901078" elapsed="0.064687"/>
+</kw>
+<var name="${each_data_txt}">{'locator': 'id=lastname', 'value': 'Poonpol', 'err_locator': 'id=error-lastname'}</var>
+<status status="PASS" start="2026-01-02T23:16:34.609065" elapsed="0.356856"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:34.970440" level="INFO">Typing text 'Piri123@gmail.com' into text field 'id=email'.</msg>
+<arg>${each_data_txt.locator}</arg>
+<arg>${each_data_txt.value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:34.966408" elapsed="0.286232"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_data_txt.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:35.252844" elapsed="0.064077"/>
+</kw>
+<var name="${each_data_txt}">{'locator': 'id=email', 'value': 'Piri123@gmail.com', 'err_locator': 'id=error-email'}</var>
+<status status="PASS" start="2026-01-02T23:16:34.966184" elapsed="0.350910"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:35.320821" level="INFO">Typing text '0911231234' into text field 'id=mobile-phone'.</msg>
+<arg>${each_data_txt.locator}</arg>
+<arg>${each_data_txt.value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:35.317595" elapsed="0.275065"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_data_txt.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:35.593070" elapsed="0.075040"/>
+</kw>
+<var name="${each_data_txt}">{'locator': 'id=mobile-phone', 'value': '0911231234', 'err_locator': 'id=error-mobile-phone'}</var>
+<status status="PASS" start="2026-01-02T23:16:35.317401" elapsed="0.350910"/>
+</iter>
+<var>${each_data_txt}</var>
+<value>@{dictionary_text_data}</value>
+<status status="PASS" start="2026-01-02T23:16:34.283209" elapsed="1.385221"/>
+</for>
+<status status="PASS" start="2026-01-02T23:16:34.282807" elapsed="1.385758"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:34.282734" elapsed="1.385925"/>
+</if>
+<if>
+<branch type="IF" condition="$locator_password">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:35.669850" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg time="2026-01-02T23:16:35.817252" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${locator_password}</arg>
+<arg>${password_val_test}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:35.669327" elapsed="0.277547"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${list_locator_err_pass}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:35.947301" elapsed="0.061749"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:16:35.668826" elapsed="0.340415"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:35.668779" elapsed="0.340575"/>
+</if>
+<if>
+<branch type="IF" condition="$list_group_radio_button">
+<for flavor="IN">
+<iter>
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:36.014944" level="INFO">Selecting 'female' from radio button 'validation-basic-radio'.</msg>
+<arg>${each_radio.group_name}</arg>
+<arg>${each_radio.value}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="PASS" start="2026-01-02T23:16:36.010463" elapsed="0.271952"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_radio.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:36.282748" elapsed="0.071242"/>
+</kw>
+<var name="${each_radio}">{'group_name': 'validation-basic-radio', 'value': 'female', 'err_locator': 'id=validation-basic-gender'}</var>
+<status status="PASS" start="2026-01-02T23:16:36.010201" elapsed="0.343964"/>
+</iter>
+<var>${each_radio}</var>
+<value>@{list_group_radio_button}</value>
+<status status="PASS" start="2026-01-02T23:16:36.009825" elapsed="0.344485"/>
+</for>
+<status status="PASS" start="2026-01-02T23:16:36.009508" elapsed="0.344923"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:36.009466" elapsed="0.345045"/>
+</if>
+<if>
+<branch type="IF" condition="$list_checkbox">
+<for flavor="IN">
+<iter>
+<for flavor="IN">
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:36.418483" level="INFO">Current page contains element 'name=courses.SQL'.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:36.357836" elapsed="0.060879"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:36.419551" level="INFO">Selecting checkbox 'name=courses.SQL'.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:36.419059" elapsed="0.382626"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:36.802717" level="INFO">Verifying checkbox 'name=courses.SQL' is selected.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-01-02T23:16:36.802258" elapsed="0.238091"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_locator_chkbox.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:37.040739" elapsed="0.064369"/>
+</kw>
+<var name="${each_chkbox}">name=courses.SQL</var>
+<status status="PASS" start="2026-01-02T23:16:36.357595" elapsed="0.747732"/>
+</iter>
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:37.168312" level="INFO">Current page contains element 'name=courses.Test Manual'.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:37.105995" elapsed="0.062551"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:37.169403" level="INFO">Selecting checkbox 'name=courses.Test Manual'.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:37.168907" elapsed="0.372416"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:37.542179" level="INFO">Verifying checkbox 'name=courses.Test Manual' is selected.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-01-02T23:16:37.541728" elapsed="0.242146"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_locator_chkbox.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:37.784318" elapsed="0.062377"/>
+</kw>
+<var name="${each_chkbox}">name=courses.Test Manual</var>
+<status status="PASS" start="2026-01-02T23:16:37.105696" elapsed="0.741174"/>
+</iter>
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:37.909250" level="INFO">Current page contains element 'name=courses.Automate Test'.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:37.847445" elapsed="0.062036"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:37.910267" level="INFO">Selecting checkbox 'name=courses.Automate Test'.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:37.909810" elapsed="0.371570"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:38.282369" level="INFO">Verifying checkbox 'name=courses.Automate Test' is selected.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-01-02T23:16:38.281787" elapsed="0.236225"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_locator_chkbox.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:38.518405" elapsed="0.059421"/>
+</kw>
+<var name="${each_chkbox}">name=courses.Automate Test</var>
+<status status="PASS" start="2026-01-02T23:16:37.847178" elapsed="0.730820"/>
+</iter>
+<iter>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:38.640859" level="INFO">Current page contains element 'name=courses.Automate Test2'.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:38.578584" elapsed="0.062497"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:38.641907" level="INFO">Selecting checkbox 'name=courses.Automate Test2'.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:38.641451" elapsed="0.431768"/>
+</kw>
+<kw name="Checkbox Should Be Selected" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:39.073784" level="INFO">Verifying checkbox 'name=courses.Automate Test2' is selected.</msg>
+<arg>${each_chkbox}</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="PASS" start="2026-01-02T23:16:39.073497" elapsed="0.238851"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_locator_chkbox.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:39.312730" elapsed="0.064214"/>
+</kw>
+<var name="${each_chkbox}">name=courses.Automate Test2</var>
+<status status="PASS" start="2026-01-02T23:16:38.578337" elapsed="0.798799"/>
+</iter>
+<var>${each_chkbox}</var>
+<value>@{each_locator_chkbox.list}</value>
+<status status="PASS" start="2026-01-02T23:16:36.355479" elapsed="3.021800"/>
+</for>
+<var name="${each_locator_chkbox}">{'list': ['name=courses.SQL', 'name=courses.Test Manual', 'name=courses.Automate Test', 'name=courses.Automate Test2'], 'err_locator': 'id=validation-basic-courses'}</var>
+<status status="PASS" start="2026-01-02T23:16:36.355394" elapsed="3.022010"/>
+</iter>
+<var>${each_locator_chkbox}</var>
+<value>@{list_checkbox}</value>
+<status status="PASS" start="2026-01-02T23:16:36.354966" elapsed="3.022521"/>
+</for>
+<status status="PASS" start="2026-01-02T23:16:36.354664" elapsed="3.022905"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:36.354620" elapsed="3.023026"/>
+</if>
+<if>
+<branch type="IF" condition="$list_dropdown">
+<for flavor="IN">
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:39.378778" elapsed="0.126173"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:39.507862" level="INFO">Clicking element 'id=nationality'.</msg>
+<arg>${each_dropdown.locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:39.505377" elapsed="0.282728"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.value}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:39.788372" elapsed="0.126444"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:40.055661" level="INFO">${msg_list_nation_r} = Thai</msg>
+<var>${msg_list_nation_r}</var>
+<arg>${each_dropdown.value}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:39.915199" elapsed="0.140565"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${each_dropdown.value}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-01-02T23:16:40.056124" elapsed="0.406299"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:40.465287" level="INFO">Clicking element 'xpath=//*[@id="menu-"]/div[3]/ul/li[221]'.</msg>
+<arg>${each_dropdown.value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:40.462823" elapsed="0.272393"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:40.735624" elapsed="0.063466"/>
+</kw>
+<var name="${each_dropdown}">{'locator': 'id=nationality', 'value': 'xpath=//*[@id="menu-"]/div[3]/ul/li[221]', 'err_locator': 'id=validation-basic-nationality'}</var>
+<status status="PASS" start="2026-01-02T23:16:39.378541" elapsed="1.420651"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:40.799598" elapsed="0.120272"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:40.921388" level="INFO">Clicking element 'id=select-role'.</msg>
+<arg>${each_dropdown.locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:40.920122" elapsed="0.311915"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.value}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:41.232448" elapsed="0.128913"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:41.482732" level="INFO">${msg_list_nation_r} = Admin</msg>
+<var>${msg_list_nation_r}</var>
+<arg>${each_dropdown.value}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:41.361584" elapsed="0.121196"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${each_dropdown.value}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-01-02T23:16:41.482948" elapsed="0.376335"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:41.860741" level="INFO">Clicking element 'xpath=//*[@id="menu-"]/div[3]/ul/li[1]'.</msg>
+<arg>${each_dropdown.value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:41.859557" elapsed="0.208924"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:42.068696" elapsed="0.063683"/>
+</kw>
+<var name="${each_dropdown}">{'locator': 'id=select-role', 'value': 'xpath=//*[@id="menu-"]/div[3]/ul/li[1]', 'err_locator': 'id=validation-role'}</var>
+<status status="PASS" start="2026-01-02T23:16:40.799459" elapsed="1.333113"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:42.133166" elapsed="0.121433"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:42.256058" level="INFO">Clicking element 'id=select-plan'.</msg>
+<arg>${each_dropdown.locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:42.254803" elapsed="0.180070"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.value}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:42.435290" elapsed="0.132826"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:42.689068" level="INFO">${msg_list_nation_r} = Enterprise</msg>
+<var>${msg_list_nation_r}</var>
+<arg>${each_dropdown.value}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:42.568453" elapsed="0.120664"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${each_dropdown.value}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-01-02T23:16:42.689303" elapsed="0.386987"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:43.078691" level="INFO">Clicking element 'xpath=//*[@id="menu-"]/div[3]/ul/li[3]'.</msg>
+<arg>${each_dropdown.value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:43.076616" elapsed="0.175399"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.err_locator}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:43.252272" elapsed="0.068768"/>
+</kw>
+<var name="${each_dropdown}">{'locator': 'id=select-plan', 'value': 'xpath=//*[@id="menu-"]/div[3]/ul/li[3]', 'err_locator': 'id=validation-plan'}</var>
+<status status="PASS" start="2026-01-02T23:16:42.132924" elapsed="1.188289"/>
+</iter>
+<var>${each_dropdown}</var>
+<value>@{list_dropdown}</value>
+<status status="PASS" start="2026-01-02T23:16:39.378111" elapsed="3.943251"/>
+</for>
+<status status="PASS" start="2026-01-02T23:16:39.377813" elapsed="3.943660"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:39.377758" elapsed="3.943800"/>
+</if>
+<arg>${dictionary_text_data}</arg>
+<arg>${locator_password}</arg>
+<arg>${password_val_test}</arg>
+<arg>${list_locator_err_pass}</arg>
+<arg>${list_group_radio_button}</arg>
+<arg>${list_checkbox}</arg>
+<arg>${list_dropdown}</arg>
+<status status="PASS" start="2026-01-02T23:16:30.297755" elapsed="13.023932"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:43.322323" level="INFO">Clicking button 'xpath=//*[@id="__next"]/div[1]/div[2]/main/div/div[3]/div/div/div/form/button'.</msg>
+<arg>${field_add_btn_sign-up}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:43.321933" elapsed="0.399049"/>
+</kw>
+<if>
+<branch type="IF" condition="'${IsPass}' == 'Y'">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Register Success</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-02T23:16:43.721754" elapsed="0.070327"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${field_add_btn_ok}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:43.792348" elapsed="0.129340"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:43.922364" level="INFO">Clicking element 'id=btn-ok'.</msg>
+<arg>${field_add_btn_ok}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:43.921963" elapsed="0.197408"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>https://automate-test.stpb-digital.com/user/list/</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-01-02T23:16:44.119592" elapsed="0.119196"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:16:44.239576" level="INFO">${index_last} = /div[last()]</msg>
+<var>${index_last}</var>
+<arg>/div[last()]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:16:44.239175" elapsed="0.000436"/>
+</kw>
+<kw name="Verify Search Page" owner="Keyword_Search_Page">
+<if>
+<branch type="IF" condition="'${isOpen}' == 'Y'">
+<kw name="Open Login Page" owner="LoginKeword">
+<arg>${url}</arg>
+<doc>ใช้สำหรับเปิดเว็บไซต์</doc>
+<status status="NOT RUN" start="2026-01-02T23:16:44.240724" elapsed="0.000026"/>
+</kw>
+<kw name="Verify login Pass" owner="LoginKeword">
+<doc>ใช้สำหรับ login ผ่าน</doc>
+<status status="NOT RUN" start="2026-01-02T23:16:44.240868" elapsed="0.000023"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Search Filters</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-01-02T23:16:44.240969" elapsed="0.000021"/>
+</kw>
+<status status="NOT RUN" start="2026-01-02T23:16:44.240535" elapsed="0.000486"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:44.240513" elapsed="0.000539"/>
+</if>
+<if>
+<branch type="IF" condition="$all_list_select_dropdown">
+<for flavor="IN">
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:44.241500" elapsed="0.120702"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:44.363663" level="INFO">Clicking element 'id=select-role'.</msg>
+<arg>${each_dropdown.locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:44.362476" elapsed="0.185076"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${each_dropdown.value}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-01-02T23:16:44.547975" elapsed="0.387049"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:44.937874" level="INFO">Clicking element 'id=option-select-role-1'.</msg>
+<arg>${each_dropdown.value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:44.935437" elapsed="0.207024"/>
+</kw>
+<var name="${each_dropdown}">{'locator': 'id=select-role', 'value': 'id=option-select-role-1'}</var>
+<status status="PASS" start="2026-01-02T23:16:44.241414" elapsed="0.901190"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:45.143064" elapsed="0.121547"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:45.266950" level="INFO">Clicking element 'id=select-plan'.</msg>
+<arg>${each_dropdown.locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:45.264945" elapsed="0.254379"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${each_dropdown.value}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-01-02T23:16:45.519704" elapsed="0.382265"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:45.904622" level="INFO">Clicking element 'id=option-select-plan-3'.</msg>
+<arg>${each_dropdown.value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:45.902411" elapsed="0.187744"/>
+</kw>
+<var name="${each_dropdown}">{'locator': 'id=select-plan', 'value': 'id=option-select-plan-3'}</var>
+<status status="PASS" start="2026-01-02T23:16:45.142869" elapsed="0.947496"/>
+</iter>
+<var>${each_dropdown}</var>
+<value>@{all_list_select_dropdown}</value>
+<status status="PASS" start="2026-01-02T23:16:44.241278" elapsed="1.849212"/>
+</for>
+<status status="PASS" start="2026-01-02T23:16:44.241096" elapsed="1.849506"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:44.241084" elapsed="1.849598"/>
+</if>
+<if>
+<branch type="IF" condition="'${isClear}' == 'Y'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${clear_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-02T23:16:46.091274" elapsed="0.000055"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>No rows</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-01-02T23:16:46.091492" elapsed="0.000043"/>
+</kw>
+<status status="NOT RUN" start="2026-01-02T23:16:46.090827" elapsed="0.000767"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:46.092169" level="INFO">Clicking element 'id=btn-search'.</msg>
+<arg>${search_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:46.091797" elapsed="0.388910"/>
+</kw>
+<if>
+<branch type="IF" condition="$all_list_select_dropdown">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-01-02T23:16:46.481809" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-01-02T23:16:46.481503" elapsed="0.000350"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator_data_grid}[0]${index_row_table}${locator_data_grid}[${index}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:46.482208" elapsed="0.124002"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:46.733971" level="INFO">${txt1} = Admin</msg>
+<var>${txt1}</var>
+<arg>${locator_data_grid}[0]${index_row_table}${locator_data_grid}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:46.606635" elapsed="0.127421"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:46.861358" level="INFO">${txt2} = Admin</msg>
+<var>${txt2}</var>
+<arg>${each_dropdown.locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:46.734422" elapsed="0.127032"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${txt1}</arg>
+<arg>${txt2}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-01-02T23:16:46.861784" elapsed="0.000459"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:16:46.862894" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:16:46.862478" elapsed="0.000475"/>
+</kw>
+<var name="${each_dropdown}">{'locator': 'id=select-role', 'value': 'id=option-select-role-1'}</var>
+<status status="PASS" start="2026-01-02T23:16:46.482115" elapsed="0.380934"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator_data_grid}[0]${index_row_table}${locator_data_grid}[${index}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T23:16:46.863520" elapsed="0.126012"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:47.114460" level="INFO">${txt1} = Enterprise</msg>
+<var>${txt1}</var>
+<arg>${locator_data_grid}[0]${index_row_table}${locator_data_grid}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:46.989927" elapsed="0.124637"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:47.237072" level="INFO">${txt2} = Enterprise</msg>
+<var>${txt2}</var>
+<arg>${each_dropdown.locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:47.114899" elapsed="0.122267"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${txt1}</arg>
+<arg>${txt2}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-01-02T23:16:47.237521" elapsed="0.000460"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-01-02T23:16:47.238645" level="INFO">${index} = 3</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-01-02T23:16:47.238212" elapsed="0.000493"/>
+</kw>
+<var name="${each_dropdown}">{'locator': 'id=select-plan', 'value': 'id=option-select-plan-3'}</var>
+<status status="PASS" start="2026-01-02T23:16:46.863332" elapsed="0.375467"/>
+</iter>
+<var>${each_dropdown}</var>
+<value>@{all_list_select_dropdown}</value>
+<status status="PASS" start="2026-01-02T23:16:46.481924" elapsed="0.756990"/>
+</for>
+<status status="PASS" start="2026-01-02T23:16:46.480977" elapsed="0.758046"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:46.480931" elapsed="0.758174"/>
+</if>
+<status status="PASS" start="2026-01-02T23:16:46.091657" elapsed="1.147649"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:46.090784" elapsed="1.148601"/>
+</if>
+<if>
+<branch type="IF" condition="'${isClose}' == 'Y'">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-01-02T23:16:47.239881" elapsed="0.000061"/>
+</kw>
+<status status="NOT RUN" start="2026-01-02T23:16:47.239515" elapsed="0.000503"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:47.239477" elapsed="0.000612"/>
+</if>
+<arg>${list_dropdown_search_page}</arg>
+<arg>${tables_data}</arg>
+<arg>${index_last}</arg>
+<arg>${search_button}</arg>
+<arg>${clear_button}</arg>
+<arg>N</arg>
+<arg>N</arg>
+<arg>N</arg>
+<status status="PASS" start="2026-01-02T23:16:44.240154" elapsed="3.000051"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-01-02T23:16:47.370786" level="INFO">${txt1} = Piri123@gmail.com</msg>
+<var>${txt1}</var>
+<arg>${tables_data}[0]${index_last}${tables_data}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T23:16:47.240473" elapsed="0.130394"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${txt1}</arg>
+<arg>${dictionary_text_data[2].value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-01-02T23:16:47.371156" elapsed="0.002215"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:16:43.721304" elapsed="3.652187"/>
+</branch>
+<branch type="ELSE">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-01-02T23:16:47.373788" elapsed="0.000051"/>
+</kw>
+<status status="NOT RUN" start="2026-01-02T23:16:47.373576" elapsed="0.000324"/>
+</branch>
+<status status="PASS" start="2026-01-02T23:16:43.721246" elapsed="3.652708"/>
+</if>
+<arg>${all_txt_data_1}</arg>
+<arg>${field_add_password}</arg>
+<arg>abz1234</arg>
+<arg>${locator_err_msg_password}</arg>
+<arg>${all_radio_btn_1}</arg>
+<arg>${list_check_box_1}</arg>
+<arg>${data_use_dropdown_1}</arg>
+<arg>Y</arg>
+<arg>${locator_Btn_search}</arg>
+<arg>${locator_Btn_clear}</arg>
+<arg>${list_dropdown_2}</arg>
+<status status="PASS" start="2026-01-02T23:16:30.296710" elapsed="17.077338"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-02T23:16:47.374506" elapsed="0.148017"/>
+</kw>
+<tag>addusr</tag>
+<status status="PASS" start="2026-01-02T23:16:28.316109" elapsed="19.206660"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-01-02T23:16:47.523476" elapsed="0.000241"/>
+</kw>
+<status status="PASS" start="2026-01-02T23:16:28.148246" elapsed="19.375533"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">addusr</stat>
+</tag>
+<suite>
+<stat name="Testcase Search Page" id="s1" pass="1" fail="0" skip="0">Testcase Search Page</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
