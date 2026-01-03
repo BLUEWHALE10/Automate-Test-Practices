@@ -17,7 +17,7 @@ ${Field_Btn_login}           id=btn-login
 # Data login ========================================
 &{data_login_pass}           email=user.test@krupbeam.com    password=jKNsrapwLNV7eBN    
 
-
+#--------------------------------------------------------------------------------------------------------------------------------
 # Search Page ------------------------------------------------------------------------------------------------------------------
 ${link_icon}                xpath=//*[@id="__next"]/div[1]/div[1]/div/div[1]/a/h6
 ${locator_Noti}             xpath=//*[@id="__next"]/div[1]/div[2]/header/div/div/div[2]/button
@@ -52,7 +52,8 @@ ${locator_scroll_to_back}    xpath=//*[@aria-label="scroll back to top"]
 ${locator_confirm_top_page}  xpath=//*[@id="__next"]/div[1]/div[2]/main/div/div[1]/div/div[1]
 ${locator_add_user_btn}      xpath=//*[@id="__next"]/div[1]/div[2]/main/div/div[2]/div/div[1]/div/a
 
-#Data Dropdown list ========================================
+#======================================== Data Dropdown list =======================================================
+
 ${selected_admin}                id=option-select-role-1
 ${selected_enterpirse}           id=option-select-plan-3
 ${selected_active}               id=option-select-status-2
@@ -74,12 +75,13 @@ ${index_first}                   /div[1]
 &{list_dropdown_select-status_active}     locator=${locator_select-status}      value=${selected_active}         
 
 #data role
-@{list_dropdown_1}                        ${list_dropdown_select-role_admin}    ${list_dropdown_select-plan_enterp}    ${list_dropdown_select-status_active}
-@{list_dropdown_2}                        ${list_dropdown_select-role_admin}    ${list_dropdown_select-plan_enterp}
+@{list_dropdown_1}                        ${list_dropdown_select-role_admin}    ${list_dropdown_select-plan_enterp}
+@{list_dropdown_2}                        ${list_dropdown_select-role_admin}    ${list_dropdown_select-plan_enterp}    ${list_dropdown_select-status_active}
 @{list_dropdown_3}                        ${list_dropdown_select-role_admin}    ${list_dropdown_select-status_active}
   
 
 
+#--------------------------------------------------------------------------------------------------------------------------------
 # ADD USER PAGE ------------------------------------------------------------------------------------------------------------------
 ${field_add_back_btn}                  xpath=//*[@id="__next"]/div[1]/div[2]/main/div/div[1]/button
 ${field_add_firstname}                 id=firstname
@@ -115,69 +117,107 @@ ${err_msg_plan}                        id=validation-plan
 
 
 #======================================== Data =======================================================
-
 #*****************************************************************************************************
 
 #Raw Text Data
-&{dict_firstname_1}    locator=${field_add_firstname}    value=Piriya                       err_locator=${err_msg_firstname}
-&{dict_lastname_1}     locator=${field_add_lastname}     value=Poonpol                      err_locator=${err_msg_lastname}
-&{dict_email_1}        locator=${field_add_email}        value=Piri123@gmail.com            err_locator=${err_msg_email}
-&{dict_mobile_1}       locator=${field_add_mobile}       value=0911231234                   err_locator=${err_msg_mobile}
+&{dict_firstname_1}    locator=${field_add_firstname}    value=Piriya                   err_status=pass        err_locator=${err_msg_firstname}    err_msg=This field is required
+&{dict_lastname_1}     locator=${field_add_lastname}     value=Poonpol                  err_status=pass        err_locator=${err_msg_lastname}     err_msg=This field is required
+&{dict_email_1}        locator=${field_add_email}        value=Piri123@gmail.com        err_status=pass        err_locator=${err_msg_email}        err_msg=This field is required
+&{dict_mobile_1}       locator=${field_add_mobile}       value=0911231234               err_status=pass        err_locator=${err_msg_mobile}       err_msg=This field is required
 
-&{dict_firstname_2}    locator=${field_add_firstname}    value=xxxxxxx                      err_locator=${err_msg_firstname}
-&{dict_lastname_2}     locator=${field_add_lastname}     value=yyyyyyy                      err_locator=${err_msg_lastname}
-&{dict_email_2}        locator=${field_add_email}        value=queens_omega@gmail.com       err_locator=${err_msg_email}
-&{dict_mobile_2}       locator=${field_add_mobile}       value=0121231234                          err_locator=${err_msg_mobile}
+&{dict_firstname_2}    locator=${field_add_firstname}    value=xxxxxxx                  err_status=pass        err_locator=${err_msg_firstname}    err_msg=This field is required
+&{dict_lastname_2}     locator=${field_add_lastname}     value=yyyyyyy                  err_status=pass        err_locator=${err_msg_lastname}     err_msg=This field is required
+&{dict_email_2}        locator=${field_add_email}        value=queens_omega@gmail.com   err_status=pass        err_locator=${err_msg_email}        err_msg=This field is required
+&{dict_mobile_2}       locator=${field_add_mobile}       value=0121231234               err_status=pass        err_locator=${err_msg_mobile}       err_msg=This field is required
+
+&{dict_firstname_f}    locator=${field_add_firstname}    value=${EMPTY}                  err_status=fail        err_locator=${err_msg_firstname}    err_msg=This field is required
+&{dict_lastname_f}     locator=${field_add_lastname}     value=${EMPTY}                  err_status=fail        err_locator=${err_msg_lastname}     err_msg=This field is required
+&{dict_email_f}        locator=${field_add_email}        value=${EMPTY}                  err_status=fail        err_locator=${err_msg_email}        err_msg=This field is required
+&{dict_mobile_f}       locator=${field_add_mobile}       value=${EMPTY}                  err_status=fail        err_locator=${err_msg_mobile}       err_msg=This field is required
 
 
 #Combine Text data 
 @{all_txt_data_1}    ${dict_firstname_1}    ${dict_lastname_1}    ${dict_email_1}    ${dict_mobile_1}           
 @{all_txt_data_2}    ${dict_firstname_2}    ${dict_lastname_2}    ${dict_email_2}    ${dict_mobile_2}           
+@{all_txt_data_f}    ${dict_firstname_f}    ${dict_lastname_f}    ${dict_email_f}    ${dict_mobile_f}           
 
 #*****************************************************************************************************
+
+
+
+#*****************************************************************************************************
+
+#Combine Password data
+&{dict_password_1}    locator=${field_add_password}    value=abszy123      err_status=pass    err_locator=${err_msg_password}    err_msg=This field is required
+&{dict_password_2}    locator=${field_add_password}    value=helloworld    err_status=pass    err_locator=${err_msg_password}    err_msg=This field is required
+&{dict_password_f}    locator=${field_add_password}    value=${EMPTY}      err_status=fail    err_locator=${err_msg_password}    err_msg=This field is required
+
+#*****************************************************************************************************
+
 
 
 #*****************************************************************************************************
 
 #radio button 1
-&{dict_radio_gender_1}    group_name=${field_add_gender}    value=female    err_locator=${err_msg_gender}
+&{dict_radio_gender_1}    group_name=${field_add_gender}    value=female    err_locator=${err_msg_gender}    err_status=pass    err_msg=This field is required
 #radio button 2
-&{dict_radio_gender_2}    group_name=${field_add_gender}    value=male    err_locator=${err_msg_gender}
+&{dict_radio_gender_2}    group_name=${field_add_gender}    value=male    err_locator=${err_msg_gender}      err_status=pass    err_msg=This field is required
  
+#radio button f
+&{dict_radio_gender_f}    group_name=${field_add_gender}    value=${EMPTY}    err_locator=${err_msg_gender}      err_status=fail    err_msg=This field is required
+
+
 #combine radio button 1
 @{all_radio_btn_1}       ${dict_radio_gender_1}
 #combine radio button 2
 @{all_radio_btn_2}       ${dict_radio_gender_2}
 
-#*****************************************************************************************************
-
-
+@{all_radio_btn_f}       ${dict_radio_gender_f}
 
 #*****************************************************************************************************
-#Raw Selected Data
+
+
+
+#*****************************************************************************************************
+
+#Raw checkbox Selected Data 
 @{list_check_box_all}     ${field_add_list_SQL}    ${field_add_list_Test_Manual}    ${field_add_list_Auto1}    ${field_add_list_Auto2}      
 #Make it in Dictionaly
-&{dict_chk_1}             list=${list_check_box_all}         err_locator=${err_msg_checkbox}
-&{dict_chk_2}             list=${list_check_box_all}[0:2]    err_locator=${err_msg_checkbox}
+&{dict_chk_1}             list=${list_check_box_all}         err_locator=${err_msg_checkbox}    err_status=pass    err_msg=This field is required
+&{dict_chk_2}             list=${list_check_box_all}[0:2]    err_locator=${err_msg_checkbox}    err_status=pass    err_msg=This field is required
+&{dict_chk_f}             list=${EMPTY}                      err_locator=${err_msg_checkbox}    err_status=fail    err_msg=This field is required
+
 #Combine check box data
 @{list_check_box_1}       &{dict_chk_1}
 @{list_check_box_2}       &{dict_chk_2}
-#*****************************************************************************************************
-
-
+@{list_check_box_f}       &{dict_chk_f}
 
 #*****************************************************************************************************
+
+
+
+#*****************************************************************************************************
+
 #Raw Selected Data 
-${selected_add_national}       xpath=//*[@id="menu-"]/div[3]/ul/li[221]
-${selected_add_role}           xpath=//*[@id="menu-"]/div[3]/ul/li[1]
-${selected_add_plan}           xpath=//*[@id="menu-"]/div[3]/ul/li[3]
+${selected_add_national_thai}             xpath=//*[@id="menu-"]/div[3]/ul/li[221]
+${selected_add_role_admin}                xpath=//*[@id="menu-"]/div[3]/ul/li[1]
+${selected_add_plan_enterprise}           xpath=//*[@id="menu-"]/div[3]/ul/li[3]
 
 
 #Make it in Dictionaly
-&{list_nationality}            locator=${field_add_dropdown_nationality}    value=${selected_add_national}    err_locator=${err_msg_nationality}    
-&{list_role}                   locator=${field_add_dropdown_role}           value=${selected_add_role}        err_locator=${err_msg_role}             
-&{list_plan}                   locator=${field_add_dropdown_plan}           value=${selected_add_plan}        err_locator=${err_msg_plan}           
+&{list_nationality}                 locator=${field_add_dropdown_nationality}    value=${selected_add_national_thai}       err_locator=${err_msg_nationality}    err_status=pass    err_msg=This field is required
+&{list_role}                        locator=${field_add_dropdown_role}           value=${selected_add_role_admin}          err_locator=${err_msg_role}           err_status=pass    err_msg=This field is required 
+&{list_plan}                        locator=${field_add_dropdown_plan}           value=${selected_add_plan_enterprise}     err_locator=${err_msg_plan}           err_status=pass    err_msg=This field is required
+
+
+&{list_nationality_fail}            locator=${field_add_dropdown_nationality}    value=${EMPTY}        err_locator=${err_msg_nationality}    err_status=fail    err_msg=This field is required
+&{list_role_fail}                   locator=${field_add_dropdown_role}           value=${EMPTY}        err_locator=${err_msg_role}           err_status=fail    err_msg=This field is required 
+&{list_plan_fail}                   locator=${field_add_dropdown_plan}           value=${EMPTY}        err_locator=${err_msg_plan}           err_status=fail    err_msg=This field is required
 
 #combine list                 
-@{data_use_dropdown_1}         ${list_nationality}    ${list_role}    ${list_plan}
+@{data_use_dropdown_1}               ${list_nationality}         ${list_role}         ${list_plan}
+@{data_use_dropdown_f1}              ${list_nationality_fail}    ${list_role}         ${list_plan}
+@{data_use_dropdown_f2}              ${list_nationality}         ${list_role_fail}    ${list_plan}
+@{data_use_dropdown_f3}              ${list_nationality}         ${list_role}         ${list_plan_fail}
+
 #*****************************************************************************************************

@@ -175,6 +175,7 @@ Veryfy Link Sign In
     Wait Until Element Is Visible    ${locator_sign_in_btn}
     Click Element                    ${locator_sign_in_btn}
     Wait Until Page Contains         Kru P' Beam
+    
 Verify Hyperlink Reset
     Verify Default Page
     [Arguments]    ${locator_Hyperlink_reset_Btn} 

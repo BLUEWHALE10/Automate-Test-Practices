@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 #----login Page
-${url}                          https://automate-test.stpb-digital.com/login/
+${url_login}                    https://automate-test.stpb-digital.com/login/
 ${browser}                      chrome
 ${locator_email}                id=email
 ${locator_password}             name=password

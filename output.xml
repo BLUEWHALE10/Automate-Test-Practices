@@ -1,186 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2026-01-01T16:44:16.065550" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.12.3 on linux)" generated="2026-01-02T21:41:43.268921" rpa="false" schemaversion="5">
 <suite id="s1" name="Testcase Search Page" source="/home/ethan-kenway/Automate Test Practices/SearchPage/Testcase_Search_Page.robot">
 <kw name="Set Selenium Speed" owner="SeleniumLibrary" type="SETUP">
 <arg>0.05s</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-01-01T16:44:16.195540" elapsed="0.000304"/>
+<status status="PASS" start="2026-01-02T21:41:43.419520" elapsed="0.000315"/>
 </kw>
-<test id="s1-t1" name="Test Validation Header And Menubar" line="11">
-<kw name="Open Login Page" owner="LoginKeword" type="SETUP">
+<test id="s1-t1" name="Test Validation Search page" line="18">
+<kw name="Verify Search Page" owner="Keyword_Search_Page">
+<if>
+<branch type="IF" condition="'${isOpen}' == 'Y'">
+<kw name="Open Login Page" owner="LoginKeword">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:16.197312" level="INFO">Opening browser 'gc' to base url 'https://automate-test.stpb-digital.com/user/list/'.</msg>
+<msg time="2026-01-02T21:41:43.421917" level="INFO">Opening browser 'gc' to base url 'https://automate-test.stpb-digital.com/user/list/'.</msg>
 <arg>${url_web}</arg>
 <arg>${browser_web}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-01T16:44:16.197071" elapsed="1.740377"/>
+<status status="PASS" start="2026-01-02T21:41:43.421694" elapsed="1.914013"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-01-01T16:44:17.937885" elapsed="0.064378"/>
+<status status="PASS" start="2026-01-02T21:41:45.335927" elapsed="0.063786"/>
 </kw>
 <arg>${url}</arg>
 <doc>ใช้สำหรับเปิดเว็บไซต์</doc>
-<status status="PASS" start="2026-01-01T16:44:16.196714" elapsed="1.805757"/>
+<status status="PASS" start="2026-01-02T21:41:43.421416" elapsed="1.978446"/>
 </kw>
 <kw name="Verify login Pass" owner="LoginKeword">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator_email}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-01T16:44:18.003445" elapsed="0.389745"/>
+<status status="PASS" start="2026-01-02T21:41:45.400442" elapsed="0.181215"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${locator_password}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-01T16:44:18.393632" elapsed="0.133140"/>
+<status status="PASS" start="2026-01-02T21:41:45.581953" elapsed="0.120801"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:18.527645" level="INFO">Typing text 'user.test@krupbeam.com' into text field 'id=email'.</msg>
+<msg time="2026-01-02T21:41:45.703253" level="INFO">Typing text 'user.test@krupbeam.com' into text field 'id=email'.</msg>
 <arg>${locator_email}</arg>
 <arg>user.test@krupbeam.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-01T16:44:18.527144" elapsed="0.304358"/>
+<status status="PASS" start="2026-01-02T21:41:45.702975" elapsed="0.325884"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:18.832564" level="INFO">Typing password into text field 'name=password'.</msg>
-<msg time="2026-01-01T16:44:18.982201" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2026-01-02T21:41:46.029769" level="INFO">Typing password into text field 'name=password'.</msg>
+<msg time="2026-01-02T21:41:46.185345" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${locator_password}</arg>
 <arg>jKNsrapwLNV7eBN</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-01T16:44:18.832004" elapsed="0.313338"/>
+<status status="PASS" start="2026-01-02T21:41:46.029273" elapsed="0.317786"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:19.146129" level="INFO">Clicking element 'id=btn-login'.</msg>
+<msg time="2026-01-02T21:41:46.348149" level="INFO">Clicking element 'id=btn-login'.</msg>
 <arg>${locator_btnLogin}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-01T16:44:19.145698" elapsed="0.225517"/>
+<status status="PASS" start="2026-01-02T21:41:46.347551" elapsed="0.253403"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Search Filters</arg>
 <arg>60s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-01-01T16:44:19.371581" elapsed="0.197613"/>
+<status status="PASS" start="2026-01-02T21:41:46.601297" elapsed="0.215762"/>
 </kw>
 <doc>ใช้สำหรับ login ผ่าน</doc>
-<status status="PASS" start="2026-01-01T16:44:18.002927" elapsed="1.566527"/>
+<status status="PASS" start="2026-01-02T21:41:45.400145" elapsed="1.417136"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
 <arg>Search Filters</arg>
 <arg>5s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-01-01T16:44:19.569758" elapsed="0.060348"/>
+<status status="PASS" start="2026-01-02T21:41:46.817424" elapsed="0.058538"/>
 </kw>
-<kw name="Verify Header And Menuar" owner="Keyword_Search_Page">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:19.691887" level="INFO">Current page contains element 'xpath=//*[@id="__next"]/div[1]/div[1]/div/div[1]/a/h6'.</msg>
-<arg>${link_icon}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-01-01T16:44:19.630905" elapsed="0.061176"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:19.752838" level="INFO">Current page contains element 'xpath=//*[@id="__next"]/div[1]/div[2]/header/div/div/div[2]/button'.</msg>
-<arg>${locator_Noti}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-01-01T16:44:19.692559" elapsed="0.060458"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:19.824983" level="INFO">Current page contains element 'xpath=//*[@id="__next"]/div[1]/div[2]/header/div/div/div[2]/span/div'.</msg>
-<arg>${locator_icon_usr}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-01-01T16:44:19.753294" elapsed="0.071957"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:19.894794" level="INFO">Current page contains element 'css=#__next &gt; div.layout-wrapper.css-uinsfl &gt; div.MuiDrawer-root.MuiDrawer-docked.layout-vertical-nav.css-1yvzy6r &gt; div &gt; div.MuiBox-root.css-ohwg9z &gt; div &gt; ul &gt; li.MuiListItem-root.MuiListItem-gutters.nav-link.css-6zyuwx &gt; a &gt; div.MuiListItemIcon-root.css-35txlm &gt; svg'.</msg>
-<arg>${locator_menu}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-01-01T16:44:19.825591" elapsed="0.069446"/>
+<status status="PASS" start="2026-01-02T21:41:43.421165" elapsed="3.454946"/>
+</branch>
+<status status="PASS" start="2026-01-02T21:41:43.421138" elapsed="3.455071"/>
+</if>
+<if>
+<branch type="IF" condition="$all_list_select_dropdown">
+<for flavor="IN">
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${each_dropdown.locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-02T21:41:46.876814" elapsed="0.126673"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:19.895862" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div[1]/div/div[1]/a/h6'.</msg>
-<arg>${link_icon}</arg>
+<msg time="2026-01-02T21:41:47.006181" level="INFO">Clicking element 'id=select-role'.</msg>
+<arg>${each_dropdown.locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-01T16:44:19.895398" elapsed="0.221409"/>
+<status status="PASS" start="2026-01-02T21:41:47.003875" elapsed="0.217646"/>
 </kw>
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>https://automate-test.stpb-digital.com/user/list/</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2026-01-01T16:44:20.117181" elapsed="0.119492"/>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${each_dropdown.value}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-01-02T21:41:47.221920" elapsed="0.409711"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:20.237533" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div[2]/header/div/div/div[2]/button'.</msg>
-<arg>${locator_Noti}</arg>
+<msg time="2026-01-02T21:41:47.634640" level="INFO">Clicking element 'id=option-select-role-1'.</msg>
+<arg>${each_dropdown.value}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-01T16:44:20.237039" elapsed="0.236175"/>
+<status status="PASS" start="2026-01-02T21:41:47.632081" elapsed="0.247956"/>
+</kw>
+<var name="${each_dropdown}">{'locator': 'id=select-role', 'value': 'id=option-select-role-1'}</var>
+<status status="PASS" start="2026-01-02T21:41:46.876696" elapsed="1.003444"/>
+</iter>
+<var>${each_dropdown}</var>
+<value>@{all_list_select_dropdown}</value>
+<status status="PASS" start="2026-01-02T21:41:46.876505" elapsed="1.003706"/>
+</for>
+<status status="PASS" start="2026-01-02T21:41:46.876331" elapsed="1.004040"/>
+</branch>
+<status status="PASS" start="2026-01-02T21:41:46.876305" elapsed="1.004157"/>
+</if>
+<if>
+<branch type="IF" condition="'${isClear}' == 'Y'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-02T21:41:47.881505" level="INFO">Clicking element 'id=btn-clear'.</msg>
+<arg>${clear_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-02T21:41:47.881076" elapsed="0.409745"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Notifications</arg>
-<arg>5s</arg>
+<arg>No rows</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-01-01T16:44:20.473622" elapsed="0.074073"/>
+<status status="PASS" start="2026-01-02T21:41:48.291209" elapsed="0.075494"/>
 </kw>
+<status status="PASS" start="2026-01-02T21:41:47.880614" elapsed="0.486269"/>
+</branch>
+<branch type="ELSE">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:20.548382" level="INFO">Clicking element 'xpath=/html/body/div[3]/div[3]/ul/li[2]/button'.</msg>
-<arg>${locator_read_noti}</arg>
+<arg>${search_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-01T16:44:20.548064" elapsed="0.215457"/>
+<status status="NOT RUN" start="2026-01-02T21:41:48.367317" elapsed="0.000067"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:20.764398" level="INFO">Clicking element 'css=#__next &gt; div.layout-wrapper.css-uinsfl &gt; div.MuiDrawer-root.MuiDrawer-docked.layout-vertical-nav.css-1yvzy6r &gt; div &gt; div.MuiBox-root.css-ohwg9z &gt; div &gt; ul &gt; li.MuiListItem-root.MuiListItem-gutters.nav-link.css-6zyuwx &gt; a &gt; div.MuiListItemIcon-root.css-35txlm &gt; svg'.</msg>
-<arg>${locator_menu}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-01T16:44:20.763909" elapsed="0.434387"/>
+<if>
+<branch type="IF" condition="$all_list_select_dropdown">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${index}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-01-02T21:41:48.367767" elapsed="0.000058"/>
 </kw>
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>https://automate-test.stpb-digital.com/user/list/</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2026-01-01T16:44:21.198696" elapsed="0.056102"/>
+<for flavor="IN ZIP">
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator_data_grid}${index_row_table}${locator_data_grid}[${index}]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-01-02T21:41:48.368467" elapsed="0.000059"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:21.255695" level="INFO">Clicking element 'xpath=//*[@id="__next"]/div[1]/div[2]/header/div/div/div[2]/span/div'.</msg>
-<arg>${locator_icon_usr}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-01T16:44:21.255174" elapsed="0.211735"/>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${txt1}</var>
+<arg>${locator_data_grid}${index_row_table}${locator_data_grid}[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-02T21:41:48.368711" elapsed="0.000056"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>User Test</arg>
-<arg>5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-01-01T16:44:21.467254" elapsed="0.062850"/>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${txt2}</var>
+<arg>${each_dropdown.locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-01-02T21:41:48.368942" elapsed="0.000051"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-01-01T16:44:21.531194" level="INFO">Clicking element 'css=body &gt; div.MuiModal-root.MuiPopover-root.MuiMenu-root.css-hxcdyb &gt; div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiMenu-paper.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-1u9pw9f &gt; ul &gt; li'.</msg>
-<arg>${locator_logout}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-01T16:44:21.530640" elapsed="0.217835"/>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${txt1}</arg>
+<arg>${txt2}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2026-01-02T21:41:48.369188" elapsed="0.000096"/>
 </kw>
-<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
-<arg>https://automate-test.stpb-digital.com/login/</arg>
-<doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2026-01-01T16:44:21.748784" elapsed="0.054576"/>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${index}</var>
+<arg>${index}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-01-02T21:41:48.369484" elapsed="0.000054"/>
 </kw>
-<doc>ใช้สำหรับการตรวจสอบ Header และ Menu bar ว่าปรากฏหรือไม่</doc>
-<status status="PASS" start="2026-01-01T16:44:19.630559" elapsed="2.172937"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<var name="${each_dropdown}"/>
+<status status="NOT RUN" start="2026-01-02T21:41:48.368263" elapsed="0.001493"/>
+</iter>
+<var>${each_dropdown}</var>
+<value>${all_list_select_dropdown}</value>
+<status status="NOT RUN" start="2026-01-02T21:41:48.367981" elapsed="0.001884"/>
+</for>
+<status status="NOT RUN" start="2026-01-02T21:41:48.367545" elapsed="0.002431"/>
+</branch>
+<status status="NOT RUN" start="2026-01-02T21:41:48.367506" elapsed="0.002548"/>
+</if>
+<status status="NOT RUN" start="2026-01-02T21:41:48.367001" elapsed="0.003105"/>
+</branch>
+<status status="PASS" start="2026-01-02T21:41:47.880571" elapsed="0.489611"/>
+</if>
+<if>
+<branch type="IF" condition="'${isClose}' == 'Y'">
+<kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-01-01T16:44:21.803902" elapsed="0.133059"/>
+<status status="NOT RUN" start="2026-01-02T21:41:48.370765" elapsed="0.000062"/>
 </kw>
-<doc>ทดสอบการทำงานของ Header ของ link ต่างๆใน header และ menu</doc>
-<tag>Header</tag>
-<status status="PASS" start="2026-01-01T16:44:16.195995" elapsed="5.741211"/>
+<status status="NOT RUN" start="2026-01-02T21:41:48.370351" elapsed="0.000552"/>
+</branch>
+<status status="PASS" start="2026-01-02T21:41:48.370311" elapsed="0.000676"/>
+</if>
+<arg>${list_dropdown_2}</arg>
+<arg>${tables_data}</arg>
+<arg>${index_first}</arg>
+<arg>${locator_Btn_search}</arg>
+<arg>${locator_Btn_clear}</arg>
+<arg>Y</arg>
+<arg>N</arg>
+<arg>Y</arg>
+<status status="PASS" start="2026-01-02T21:41:43.420733" elapsed="4.950379"/>
+</kw>
+<tag>Search</tag>
+<status status="PASS" start="2026-01-02T21:41:43.420000" elapsed="4.951558"/>
 </test>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-01-01T16:44:21.938025" elapsed="0.000154"/>
+<status status="PASS" start="2026-01-02T21:41:48.372616" elapsed="0.153659"/>
 </kw>
-<status status="PASS" start="2026-01-01T16:44:16.066383" elapsed="5.871833"/>
+<status status="PASS" start="2026-01-02T21:41:43.269760" elapsed="5.256683"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Header</stat>
+<stat pass="1" fail="0" skip="0">Search</stat>
 </tag>
 <suite>
 <stat name="Testcase Search Page" id="s1" pass="1" fail="0" skip="0">Testcase Search Page</stat>

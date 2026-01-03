@@ -3,7 +3,7 @@ Library          SeleniumLibrary
 Resource         ${CURDIR}/Keyword_Search_Page.robot
 #esource         /../home/ethan-kenway/Automate Test Practices/LoginPage/LoginKeword.robot
 Suite Setup      Set Selenium Speed    0.05s
-Test Setup       Open Login Page    ${url}
+Test Setup       Open Login Page    ${url_login}
 Test Teardown    Close Browser
 Suite Teardown   Close All Browsers
 
@@ -35,12 +35,39 @@ Test Validation Back Button
     Verify Back Button
 
 
-Test Validation add user
-    [Tags]    addusr
-    Verify Input Data    ${all_txt_data_1}    
-    ...                  ${field_add_password}    abz1234    ${locator_err_msg_password}
-    ...                  ${all_radio_btn_1}    
-    ...                  ${list_check_box_1}    
-    ...                  ${data_use_dropdown_1}    
-    ...                  Y    ${locator_Btn_search}    ${locator_Btn_clear}
-    ...                  ${list_dropdown_2}
+Test Validation add user pass
+    [Tags]    add usr pass
+    [Setup]
+    [Template]    Verify Input Data
+
+    ${all_txt_data_1}    ${dict_password_1}    ${all_radio_btn_1}   ${list_check_box_1}    ${data_use_dropdown_1}    ${locator_Btn_search}    ${locator_Btn_clear}    ${list_dropdown_1}    Pass          
+    ${all_txt_data_2}    ${dict_password_2}    ${all_radio_btn_2}   ${list_check_box_2}    ${data_use_dropdown_1}    ${locator_Btn_search}    ${locator_Btn_clear}    ${list_dropdown_1}    Pass          
+    ${all_txt_data_1}    ${dict_password_f}    ${all_radio_btn_2}   ${list_check_box_2}    ${data_use_dropdown_1}     ${locator_Btn_search}    ${locator_Btn_clear}    ${list_dropdown_1}    Fail          
+
+    [Teardown]
+
+
+Test Validation Add User fail
+    [Tags]    add usr fail
+    [Setup]
+    [Template]    Verify Input Data
+
+    ${all_txt_data_f}    ${dict_password_2}    ${all_radio_btn_2}   ${list_check_box_2}    ${data_use_dropdown_1}     ${locator_Btn_search}    ${locator_Btn_clear}    ${list_dropdown_1}    Fail          
+    ${all_txt_data_1}    ${dict_password_1}    ${all_radio_btn_f}   ${list_check_box_2}    ${data_use_dropdown_1}     ${locator_Btn_search}    ${locator_Btn_clear}    ${list_dropdown_1}    Fail          
+    ${all_txt_data_1}    ${dict_password_1}    ${all_radio_btn_1}   ${list_check_box_f}    ${data_use_dropdown_1}     ${locator_Btn_search}    ${locator_Btn_clear}    ${list_dropdown_1}    Fail          
+    ${all_txt_data_1}    ${dict_password_1}    ${all_radio_btn_1}   ${list_check_box_1}    ${data_use_dropdown_f1}    ${locator_Btn_search}    ${locator_Btn_clear}    ${list_dropdown_1}    Fail          
+    ${all_txt_data_1}    ${dict_password_1}    ${all_radio_btn_1}   ${list_check_box_1}    ${data_use_dropdown_f2}    ${locator_Btn_search}    ${locator_Btn_clear}    ${list_dropdown_1}    Fail          
+    ${all_txt_data_1}    ${dict_password_1}    ${all_radio_btn_1}   ${list_check_box_1}    ${data_use_dropdown_f3}    ${locator_Btn_search}    ${locator_Btn_clear}    ${list_dropdown_1}    Fail          
+    
+    [Teardown]
+
+Test Validation Reset Add User
+    [Tags]    rst btn
+    [Setup]
+    [Template]    Verify Reset Hyperlink
+
+    ${all_txt_data_1}    ${dict_password_1}    ${all_radio_btn_1}   ${list_check_box_1}    ${data_use_dropdown_1}    ${field_add_hyperlink_rst}              
+    
+
+    [Teardown]
+

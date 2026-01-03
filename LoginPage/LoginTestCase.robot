@@ -2,12 +2,12 @@
 Library           SeleniumLibrary
 Resource          ${CURDIR}/LoginKeword.robot
 #Suite Setup       Set Selenium Speed    1
-Test Setup        Open Login Page        ${url}
+Test Setup        Open Login Page        ${url_login}
 Test Teardown     Close All Browsers
 
 *** Test Cases ***
 Default Login Page
-    Open Login Page                  ${url}
+    Open Login Page                  ${url_login}
     Wait Until Page Contains         Welcome to Kru P' Beam!
     Wait Until Element Is Visible    ${locator_email}
     Wait Until Element Is Visible    ${locator_email}

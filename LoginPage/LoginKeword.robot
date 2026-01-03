@@ -38,7 +38,7 @@ Verify error message
 Verify Input Email Pass
     [Documentation]                      ใช้สำหรับตรวจสอบการกรอก Email ถูกต้อง
     [Arguments]                          ${input_email}
-    Open Login Page                      ${url}             
+    Open Login Page                      ${url_login}             
     Wait Until Element Is Visible        ${locator_email}
     Input Text                           ${locator_email}              ${input_email}
     Mouse Down                           ${locator_btnLogin}
@@ -58,7 +58,7 @@ Verify Password Pass
 Verify Input Email Fail
     [Documentation]                      ใช้สำหรับตรวจสอบการกรอก Email ไม่กถูกต้อง
     [Arguments]                          ${input_email}                   ${txt_email_err}             
-    Open Login Page                      ${url}             
+    Open Login Page                      ${url_login}             
     Wait Until Element Is Visible        ${locator_email}
     Input Text                           ${locator_email}                 ${input_email}
     Mouse Down                           ${locator_btnLogin}
@@ -69,7 +69,7 @@ Verify Input Email Fail
 Verify Input Password Fail
     [Documentation]                      ใช้สำหรับตรวจสอบการกรอก password ไม่ถูกต้อง
     [Arguments]                          ${input_password}                ${txt_email_err}     
-    Open Login Page                      ${url}             
+    Open Login Page                      ${url_login}             
     Wait Until Element Is Visible        ${locator_password}
     Input Text                           ${locator_password}              ${input_password}
     Mouse Down                           ${locator_btnLogin}
@@ -82,14 +82,14 @@ Verify Requirment
     [Documentation]                  ใช้สำหรับตรวจสอบข้อความที่จำเป็นต้องกรอก
     Verify Input Email Fail          ${EMPTY}                             email is a required field
     Close Browser
-    Open Login Page                  ${url}
+    Open Login Page                  ${url_login}
     Verify Input Password Fail       ${EMPTY}                             password is a required field
     
 
 Verify Show Password
     [Documentation]                  ใช้สำหรับตรวจสอบการมองเห็นของ password
     [Arguments]                      ${password}
-    Open Login Page                  ${url}
+    Open Login Page                  ${url_login}
     Wait Until Element Is Visible    ${locator_password}
     Input Password                   ${locator_password}                  ${password}
     Click Element                    ${locator_blind_btn}    

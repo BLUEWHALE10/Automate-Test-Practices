@@ -141,16 +141,9 @@ Verify Default Page
     Wait Until Element Is Visible       ${field_add_btn_sign-up}
 
 Fill all data
-
-    Verify login Pass
-    Wait Until Element Is Visible    ${locator_add_user_btn}
-    Click Element                    ${locator_add_user_btn}
-    Wait Until Location Contains     https://automate-test.stpb-digital.com/user/form/    
-    Verify Default Page
-    
     [Arguments]
-    ...            ${dictionary_text_data}    
-    ...            ${locator_password}          ${password_val_test}        ${list_locator_err_pass}
+    ...            ${dictionary_text_data}   
+    ...            ${dictionary_password_data}
     ...            ${list_group_radio_button}
     ...            ${list_checkbox}               
     ...            ${list_dropdown}             
@@ -166,10 +159,10 @@ Fill all data
     END
     
     #Fill input password
-    IF    $locator_password
+    IF    $dictionary_password_data
         
-        Input Password                           ${locator_password}    ${password_val_test}
-        Wait Until Element Is Not Visible        ${list_locator_err_pass}
+        Input Password                           ${dictionary_password_data.locator}    ${dictionary_password_data.value}
+        Wait Until Element Is Not Visible        ${dictionary_password_data.err_locator}
     
     END
 
@@ -177,10 +170,13 @@ Fill all data
     IF    $list_group_radio_button
         
         FOR    ${each_radio}    IN       @{list_group_radio_button}
-             
+        
+             IF  $each_radio.value    
+                 
                Select Radio Button                      ${each_radio.group_name}         ${each_radio.value}            
                Wait Until Element Is Not Visible        ${each_radio.err_locator}
             
+             END
         END
     END
 
@@ -189,15 +185,17 @@ Fill all data
 
 
         FOR    ${each_locator_chkbox}   IN      @{list_checkbox}
-
-            FOR    ${each_chkbox}    IN       @{each_locator_chkbox.list}
             
+            IF    $each_locator_chkbox.list
+                FOR    ${each_chkbox}    IN       @{each_locator_chkbox.list}
                 
-                Page Should Contain Element                  ${each_chkbox}
-                Select Checkbox                              ${each_chkbox}
-                Checkbox Should Be Selected                  ${each_chkbox}
-                Wait Until Element Is Not Visible            ${each_locator_chkbox.err_locator} 
-
+                    
+                    Page Should Contain Element                  ${each_chkbox}
+                    Select Checkbox                              ${each_chkbox}
+                    Checkbox Should Be Selected                  ${each_chkbox}
+                    Wait Until Element Is Not Visible            ${each_locator_chkbox.err_locator} 
+    
+                END
             END
         END 
     END
@@ -205,34 +203,46 @@ Fill all data
     #Select DropDown
     IF    $list_dropdown
         FOR    ${each_dropdown}    IN    @{list_dropdown}
-            
-            Wait Until Element Is Visible       ${each_dropdown.locator}
-            Click Element                       ${each_dropdown.locator}
-            
-            
-            Wait Until Element Is Visible       ${each_dropdown.value}
-            ${msg_list_nation_r}    Get Text    ${each_dropdown.value}
-            
-            Scroll Element Into View            ${each_dropdown.value}
-            Click Element                       ${each_dropdown.value}
+            IF    $each_dropdown.value
                 
-            Wait Until Element Is Not Visible   ${each_dropdown.err_locator}
-    
+            
+                Wait Until Element Is Visible       ${each_dropdown.locator}
+                Click Element                       ${each_dropdown.locator}
+                
+                
+                Wait Until Element Is Visible       ${each_dropdown.value}
+                ${msg_list_nation_r}    Get Text    ${each_dropdown.value}
+                
+                Scroll Element Into View            ${each_dropdown.value}
+                Click Element                       ${each_dropdown.value}
+                    
+                Wait Until Element Is Not Visible   ${each_dropdown.err_locator}
+            END   
         END
     END
 
 Verify Input Data 
     [Arguments]
     ...            ${dictionary_text_data}    
-    ...            ${locator_password}          ${password_val_test}        ${list_locator_err_pass}
+    ...            ${dictionary_password_data}
     ...            ${list_group_radio_button}
     ...            ${list_checkbox}                 
     ...            ${list_dropdown}
-    ...            ${IsPass}    ${search_button}    ${clear_button}    
-    ...            ${list_dropdown_search_page}    
-    
+    ...            ${search_button}    ${clear_button}    
+    ...            ${list_dropdown_search_page}
+    ...            ${IsPass}   
+
+#--------------------------------- Import from other file ----------------------------------
+    Open Login Page                  ${url_login}
+    Verify login Pass
+    Wait Until Element Is Visible    ${locator_add_user_btn}
+    Click Element                    ${locator_add_user_btn}
+    Wait Until Location Contains     https://automate-test.stpb-digital.com/user/form/    
+    Verify Default Page
+
+#--------------------------------------------------------------------------------------------
     Fill all data  ${dictionary_text_data}    
-    ...            ${locator_password}          ${password_val_test}        ${list_locator_err_pass}
+    ...            ${dictionary_password_data} 
     ...            ${list_group_radio_button}
     ...            ${list_checkbox}                 
     ...            ${list_dropdown}
@@ -240,7 +250,7 @@ Verify Input Data
     
     Click Button    ${field_add_btn_sign-up}
     
-    IF    '${IsPass}' == 'Y'
+    IF    '${IsPass}' == 'Pass'
         
         Wait Until Page Contains            Register Success
         Wait Until Element Is Visible       ${field_add_btn_ok}
@@ -252,11 +262,175 @@ Verify Input Data
 
         ${txt1}    Get Text              ${tables_data}[0]${index_last}${tables_data}[4]
         Should Be Equal As Strings       ${txt1}    ${dictionary_text_data[2].value}
+        Close Browser
 
     ELSE
         
+        Verify Requirement              ${dictionary_text_data}    
+    ...                                 ${dictionary_password_data}  
+    ...                                 ${list_group_radio_button}
+    ...                                 ${list_checkbox}                 
+    ...                                 ${list_dropdown}   
         Close Browser
 
     END
     
 
+Verify Requirement
+
+    [Arguments]    ${dictionary_text_data}    
+    ...            ${dictionary_password_data}
+    ...            ${list_group_radio_button}
+    ...            ${list_checkbox}                 
+    ...            ${list_dropdown}    
+
+
+    IF    $dictionary_text_data
+        FOR    ${each_data_txt}    IN    @{dictionary_text_data}
+            IF    '${each_data_txt.err_status}' == 'fail'
+                
+                ${err_msg}    Get Text               ${each_data_txt.err_locator}
+                Should Be Equal As Strings           ${err_msg}    ${each_data_txt.err_msg}
+            
+            END
+        END
+    END
+    
+    #Fill input password
+    IF    $dictionary_password_data
+        IF    '${dictionary_password_data.err_status}' == 'fail'
+            
+            ${err_msg}    Get Text               ${dictionary_password_data.err_locator}
+            Should Be Equal As Strings           ${err_msg}    ${dictionary_password_data.err_msg}
+    
+        END
+    END
+
+    #Select Radio Btn
+    IF    $list_group_radio_button
+        
+        FOR    ${each_radio}    IN       @{list_group_radio_button}
+            IF    '${each_radio.err_status}' == 'fail'
+            
+                ${err_msg}    Get Text               ${each_radio.err_locator}
+                Should Be Equal As Strings           ${err_msg}    ${each_radio.err_msg}
+             
+            END
+        END
+    END
+
+    #Select check box
+    IF    $list_checkbox
+
+        FOR    ${each_locator_chkbox}   IN      @{list_checkbox}
+            IF    '${each_locator_chkbox.err_status}' == 'fail'
+                
+               
+                ${err_msg}    Get Text               ${each_locator_chkbox.err_locator}
+                Should Be Equal As Strings           ${err_msg}    ${each_locator_chkbox.err_msg}
+        
+            END
+        END 
+    END
+
+
+    #Select DropDown
+    IF    $list_dropdown
+        FOR    ${each_dropdown}    IN    @{list_dropdown}
+            IF    '${each_dropdown.err_status}' == 'fail'
+                
+            
+                ${err_msg}    Get Text                  ${each_dropdown.err_locator}
+                Should Be Equal As Strings              ${err_msg}    ${each_dropdown.err_msg}
+        
+            END
+        END
+    END
+
+Verify Reset Hyperlink 
+    [Arguments]
+    ...            ${dictionary_text_data}    
+    ...            ${dictionary_password_data}
+    ...            ${list_group_radio_button}
+    ...            ${list_checkbox}                 
+    ...            ${list_dropdown}
+    ...            ${Reset_button}    
+   
+
+#--------------------------------- Import from other file ----------------------------------
+    Open Login Page                  ${url_login}
+    Verify login Pass
+    Wait Until Element Is Visible    ${locator_add_user_btn}
+    Click Element                    ${locator_add_user_btn}
+    Wait Until Location Contains     https://automate-test.stpb-digital.com/user/form/    
+    Verify Default Page
+
+#--------------------------------------------------------------------------------------------
+    Fill all data  ${dictionary_text_data}    
+    ...            ${dictionary_password_data} 
+    ...            ${list_group_radio_button}
+    ...            ${list_checkbox}                 
+    ...            ${list_dropdown}
+    
+    
+    Execute Javascript    window.scrollTo(document.body.scrollHeight, 0);
+    Wait Until Element Is Visible    ${Reset_button}    
+    Click Element                    ${Reset_button}
+
+    IF    $dictionary_text_data
+        FOR    ${each_data_txt}    IN    @{dictionary_text_data}
+            IF    '${each_data_txt.err_status}' == 'fail'
+                
+                ${msg}    Get Text               ${each_data_txt.locator}
+                Should Be Equal As Strings       ${msg}    ${EMPTY}
+            
+            END
+        END
+    END
+    
+    #Fill input password
+    IF    $dictionary_password_data
+
+            
+        ${msg}    Get Text               ${dictionary_password_data.locator}
+        Should Be Equal As Strings       ${msg}    ${EMPTY}
+    
+
+    END
+
+    #Select Radio Btn
+    IF    $list_group_radio_button
+        
+        FOR    ${each_radio}    IN       @{list_group_radio_button}
+            
+            Radio Button Should Not Be Selected    ${each_radio.group_name}
+             
+        END
+    END
+
+    #Select check box
+    IF    $list_checkbox
+
+        FOR    ${each_locator_chkbox}   IN      @{list_checkbox}
+            FOR    ${each_chkbox}    IN    @{each_locator_chkbox.list}
+            
+                Checkbox Should Not Be Selected    ${each_chkbox}    
+                
+            END
+            
+        
+        END 
+    END
+
+
+    #Select DropDown
+    IF    $list_dropdown
+        FOR    ${each_dropdown}    IN    @{list_dropdown}
+                
+            ${msg}    Get Text                  ${each_dropdown.locator}
+            Should Be Equal As Strings          ${msg}    ${EMPTY}
+    
+        END
+    END
+
+    Close Browser
